@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en" style="scroll-behavior: smooth;">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>ABDALLAH.DEV | Portfolio</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;family=Inter:wght@300..700&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+
+  <!-- AOS & Swiper CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary": "#42596b",
+            "tertiary-dim": "#b9d2e7",
+            "inverse-surface": "#fcf8f8",
+            "surface-container-high": "#1f2020",
+            "surface-bright": "#2c2c2c",
+            "secondary-fixed-dim": "#d3d5d6",
+            "outline": "#767575",
+            "on-tertiary-fixed-variant": "#435b6c",
+            "on-primary-fixed-variant": "#006576",
+            "on-primary-container": "#5ee1ff",
+            "error-container": "#7f2927",
+            "on-secondary-fixed": "#3d4041",
+            "surface-variant": "#252626",
+            "surface-tint": "#4cd7f6",
+            "secondary-container": "#393c3d",
+            "on-primary-fixed": "#004653",
+            "on-error-container": "#ff9993",
+            "surface-dim": "#0e0e0e",
+            "surface-container-low": "#131313",
+            "surface-container-lowest": "#000000",
+            "tertiary-container": "#c7e0f5",
+            "inverse-primary": "#00687b",
+            "on-tertiary-fixed": "#273e4f",
+            "secondary-dim": "#9c9e9f",
+            "on-secondary": "#1d2122",
+            "secondary": "#9c9e9f",
+            "inverse-on-surface": "#565554",
+            "primary-fixed": "#acedff",
+            "primary-container": "#004e5c",
+            "error-dim": "#bb5551",
+            "tertiary": "#daedff",
+            "on-secondary-container": "#bdc0c1",
+            "primary-dim": "#37c9e7",
+            "on-background": "#e7e5e4",
+            "on-tertiary-container": "#3a5162",
+            "on-surface": "#e7e5e4",
+            "surface": "#0e0e0e",
+            "surface-container": "#191a1a",
+            "background": "#0e0e0e",
+            "primary": "#4cd7f6",
+            "on-secondary-fixed-variant": "#595c5d",
+            "primary-fixed-dim": "#74e3ff",
+            "on-primary": "#004754",
+            "surface-container-highest": "#252626",
+            "on-surface-variant": "#acabaa",
+            "secondary-fixed": "#e1e3e4",
+            "error": "#ee7d77",
+            "outline-variant": "#484848",
+            "tertiary-fixed-dim": "#b9d2e7",
+            "tertiary-fixed": "#c7e0f5",
+            "on-error": "#490106"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "fontFamily": {
+            "headline": ["Manrope"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          }
+        },
+      },
+    }
+  </script>
+  <style>
+    body {
+      background-color: #0e0e0e;
+      color: #e7e5e4;
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .tonal-shift {
+      transition: background-color 0.3s ease;
+    }
+
+    .swiper-pagination-bullet {
+      background: #484848 !important;
+      opacity: 1 !important;
+      transition: all 0.3s ease !important;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: #4cd7f6 !important;
+      width: 24px !important;
+      border-radius: 8px !important;
+    }
+
+    .swiper-horizontal>.swiper-pagination-bullets,
+    .swiper-pagination-bullets.swiper-pagination-horizontal {
+      bottom: 0 !important;
+    }
+  </style>
+</head>
+
+<body class="font-body selection:bg-primary/30 selection:text-primary overflow-x-hidden">
+  <!-- TopNavBar -->
+  <header
+    class="fixed top-0 w-full z-50 bg-neutral-950/80 backdrop-blur-xl shadow-2xl shadow-black/50 transition-all duration-300">
+    <nav class="flex justify-between items-center max-w-7xl mx-auto px-8 h-20 font-['Manrope'] tracking-tight">
+      <div
+        class="text-xl font-bold tracking-tighter text-neutral-100 hover:text-primary transition-colors cursor-pointer"
+        onclick="window.scrollTo(0,0)">ABDALLAH.DEV</div>
+      <div class="hidden md:flex items-center gap-8">
+        <a class="text-neutral-400 hover:text-cyan-400 hover:border-b-2 hover:border-cyan-400 pb-1 transition-all"
+          href="#work">Work</a>
+        <a class="text-neutral-400 hover:text-cyan-400 hover:border-b-2 hover:border-cyan-400 pb-1 transition-all"
+          href="#about">About</a>
+        <a class="text-neutral-400 hover:text-cyan-400 hover:border-b-2 hover:border-cyan-400 pb-1 transition-all"
+          href="#skills">Skills</a>
+        <a class="text-neutral-400 hover:text-cyan-400 hover:border-b-2 hover:border-cyan-400 pb-1 transition-all"
+          href="#services">Services</a>
+        <a class="text-neutral-400 hover:text-cyan-400 hover:border-b-2 hover:border-cyan-400 pb-1 transition-all"
+          href="#contact">Contact</a>
+      </div>
+      <a href="#contact"
+        class="bg-primary text-on-primary px-6 py-2 rounded-lg font-bold hover:bg-primary-dim hover:shadow-lg hover:shadow-primary/30 transition-all active:scale-95 duration-300">Hire
+        Me</a>
+    </nav>
+  </header>
+  <main class="pt-20">
+    <!-- Hero Section -->
+    <section class="relative min-h-[921px] flex flex-col justify-center items-center px-8 text-center overflow-hidden">
+      <div
+        class="absolute inset-0 z-0 bg-[radial-gradient(circle_at_50%_-20%,_#004e5c_0%,_transparent_50%)] opacity-30 animate-pulse"
+        style="animation-duration: 8s;"></div>
+      <div class="z-10 max-w-5xl mx-auto">
+        <span data-aos="fade-down"
+          class="inline-block mb-6 px-4 py-1 rounded-full border border-primary/20 bg-primary/5 text-primary text-sm font-semibold tracking-widest uppercase">Graphic
+          Designer &amp; Front-End Learner</span>
+        <h1 data-aos="fade-up"
+          class="font-headline text-5xl md:text-8xl font-extrabold tracking-tighter leading-[1.1] mb-8 text-on-surface">
+          DESIGNING <span class="text-primary italic">PRECISION.</span><br />BUILDING THE WEB.
+        </h1>
+        <p data-aos="fade-up" data-aos-delay="100"
+          class="font-body text-on-surface-variant text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+          Blending creativity with professionalism to deliver stunning visual designs and modern web experiences.
+        </p>
+        <div data-aos="fade-up" data-aos-delay="200"
+          class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a class="px-8 py-4 bg-primary text-on-primary font-bold rounded hover:bg-primary-dim hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/20 transition-all duration-300 w-full sm:w-auto"
+            href="#work">View My Work</a>
+          <a class="px-8 py-4 bg-surface-container-highest text-on-surface font-bold rounded hover:bg-surface-bright hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto border border-transparent hover:border-outline-variant/30"
+            href="#contact">Hire Me</a>
+        </div>
+      </div>
+    </section>
+    <!-- About Section -->
+    <section class="py-32 px-8 bg-surface-container-low" id="about">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div data-aos="fade-right" data-aos-duration="1000" class="relative group">
+          <div
+            class="absolute -inset-4 bg-gradient-to-br from-primary/20 to-transparent blur-2xl group-hover:opacity-100 opacity-50 transition-opacity duration-700">
+          </div>
+          <img
+            class="relative rounded-lg grayscale hover:grayscale-0 transition-all duration-700 w-full aspect-square object-cover shadow-2xl"
+            data-alt="Abdallah Ahmed Samir Profile Picture" src="./assets/images/my-profile.png" />
+        </div>
+        <div data-aos="fade-left" data-aos-duration="1000">
+          <h2 class="font-headline text-4xl font-bold mb-8 text-on-surface">Behind the Craft</h2>
+          <div class="space-y-6 text-on-surface-variant text-lg leading-relaxed">
+            <p>
+              I am <span class="text-on-surface font-bold transition-colors hover:text-primary cursor-default">Abdallah
+                Ahmed Samir</span>, a multi-disciplinary creator currently refining my strategic mindset at the <span
+                class="text-primary hover:text-primary-dim transition-colors">Faculty of Commerce, Ain Shams
+                University</span>.
+            </p>
+            <p>
+              My journey is rooted in community and impact. Through my involvement with <span
+                class="text-on-surface font-semibold hover:text-primary transition-colors cursor-default">YLY, Life
+                Makers, and Resala</span>, I've learned that great design isn't just about pixels—it's about people,
+              communication, and solving real-world challenges.
+            </p>
+            <p>
+              I specialize in bridging the gap between brand identity and digital implementation, ensuring every project
+              I touch has both a soul and a structure.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Skills Section - Bento Grid -->
+    <section class="py-32 px-8" id="skills">
+      <div class="max-w-7xl mx-auto">
+        <div data-aos="fade-up" class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+          <h2 class="font-headline text-4xl font-bold text-on-surface">Core Competencies</h2>
+          <span class="text-primary font-mono text-sm tracking-widest uppercase">Precision &amp; Performance</span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Technical Block -->
+          <div data-aos="fade-up" data-aos-delay="100"
+            class="md:col-span-2 bg-surface-container rounded-lg p-8 border border-outline-variant/10 hover:border-primary/20 transition-colors duration-500 hover:shadow-2xl hover:shadow-primary/5">
+            <div class="flex items-center gap-3 mb-6">
+              <span class="material-symbols-outlined text-primary" style="animation: pulse 3s infinite;">terminal</span>
+              <h3 class="text-xl font-bold font-headline">Technical Arsenal</h3>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+              <div
+                class="p-4 bg-surface-container-lowest rounded flex items-center gap-3 group hover:bg-primary/10 hover:-translate-y-1 transition-all duration-300">
+                <div class="w-2 h-2 rounded-full bg-primary group-hover:scale-150 transition-transform"></div>
+                <span class="font-medium group-hover:text-primary transition-colors">Photoshop</span>
+              </div>
+              <div
+                class="p-4 bg-surface-container-lowest rounded flex items-center gap-3 group hover:bg-primary/10 hover:-translate-y-1 transition-all duration-300">
+                <div class="w-2 h-2 rounded-full bg-primary group-hover:scale-150 transition-transform"></div>
+                <span class="font-medium group-hover:text-primary transition-colors">HTML &amp; CSS</span>
+              </div>
+              <div
+                class="p-4 bg-surface-container-lowest rounded flex items-center gap-3 group hover:bg-primary/10 hover:-translate-y-1 transition-all duration-300">
+                <div class="w-2 h-2 rounded-full bg-primary group-hover:scale-150 transition-transform"></div>
+                <span class="font-medium group-hover:text-primary transition-colors">Tailwind CSS</span>
+              </div>
+              <div
+                class="p-4 bg-surface-container-lowest rounded flex items-center gap-3 group hover:bg-primary/10 hover:-translate-y-1 transition-all duration-300">
+                <div class="w-2 h-2 rounded-full bg-primary group-hover:scale-150 transition-transform"></div>
+                <span class="font-medium group-hover:text-primary transition-colors">Figma</span>
+              </div>
+              <div
+                class="p-4 bg-surface-container-lowest rounded flex items-center gap-3 group hover:bg-primary/10 hover:-translate-y-1 transition-all duration-300">
+                <div class="w-2 h-2 rounded-full bg-primary group-hover:scale-150 transition-transform"></div>
+                <span class="font-medium group-hover:text-primary transition-colors">Git</span>
+              </div>
+              <div
+                class="p-4 bg-surface-container-lowest rounded flex items-center gap-3 group hover:bg-primary/10 hover:-translate-y-1 transition-all duration-300">
+                <div class="w-2 h-2 rounded-full bg-primary group-hover:scale-150 transition-transform"></div>
+                <span class="font-medium group-hover:text-primary transition-colors">Microsoft Office</span>
+              </div>
+            </div>
+          </div>
+          <!-- Soft Skills -->
+          <div data-aos="fade-left" data-aos-delay="200"
+            class="bg-primary/5 rounded-lg p-8 border border-primary/20 hover:bg-primary/10 hover:border-primary/40 transition-colors duration-500">
+            <div class="flex items-center gap-3 mb-6">
+              <span class="material-symbols-outlined text-primary animate-bounce"
+                style="animation-duration: 3s;">psychology</span>
+              <h3 class="text-xl font-bold font-headline">Soft Power</h3>
+            </div>
+            <ul class="space-y-4">
+              <li
+                class="flex justify-between items-center border-b border-outline-variant/20 pb-2 group hover:border-primary/50 transition-colors">
+                <span class="group-hover:text-white transition-colors">Teamwork</span>
+                <span
+                  class="material-symbols-outlined text-xs group-hover:text-primary group-hover:scale-125 transition-all">done_all</span>
+              </li>
+              <li
+                class="flex justify-between items-center border-b border-outline-variant/20 pb-2 group hover:border-primary/50 transition-colors">
+                <span class="group-hover:text-white transition-colors">Communication</span>
+                <span
+                  class="material-symbols-outlined text-xs group-hover:text-primary group-hover:scale-125 transition-all">done_all</span>
+              </li>
+              <li
+                class="flex justify-between items-center border-b border-outline-variant/20 pb-2 group hover:border-primary/50 transition-colors">
+                <span class="group-hover:text-white transition-colors">Problem-Solving</span>
+                <span
+                  class="material-symbols-outlined text-xs group-hover:text-primary group-hover:scale-125 transition-all">done_all</span>
+              </li>
+              <li
+                class="flex justify-between items-center border-b border-outline-variant/20 pb-2 group hover:border-primary/50 transition-colors">
+                <span class="group-hover:text-white transition-colors">Research</span>
+                <span
+                  class="material-symbols-outlined text-xs group-hover:text-primary group-hover:scale-125 transition-all">done_all</span>
+              </li>
+              <li
+                class="flex justify-between items-center border-b border-outline-variant/20 pb-2 group hover:border-primary/50 transition-colors">
+                <span class="group-hover:text-white transition-colors">Adaptability</span>
+                <span
+                  class="material-symbols-outlined text-xs group-hover:text-primary group-hover:scale-125 transition-all">done_all</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Services Section -->
+    <section class="py-32 px-8 bg-surface-container-lowest relative" id="services">
+      <div class="max-w-7xl mx-auto relative z-10">
+        <h2 data-aos="fade-up" class="font-headline text-4xl font-bold mb-16 text-center">Service Ecosystem</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div data-aos="fade-up" data-aos-delay="0"
+            class="p-8 bg-surface-container-low hover:bg-surface-container-high hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/5 border border-transparent hover:border-outline-variant/20 transition-all duration-300 group rounded-lg">
+            <span
+              class="material-symbols-outlined text-primary text-4xl mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 block">campaign</span>
+            <h3 class="text-xl font-bold mb-4 group-hover:text-primary transition-colors">Social Media Designs</h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed">Eye-catching posts, stories, and cover designs
+              for Instagram, Facebook, and LinkedIn that boost engagement and brand visibility.</p>
+          </div>
+          <div data-aos="fade-up" data-aos-delay="100"
+            class="p-8 bg-surface-container-low hover:bg-surface-container-high hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/5 border border-transparent hover:border-outline-variant/20 transition-all duration-300 group rounded-lg">
+            <span
+              class="material-symbols-outlined text-primary text-4xl mb-6 group-hover:scale-110 group-hover:-rotate-6 transition-transform duration-300 block">branding_watermark</span>
+            <h3 class="text-xl font-bold mb-4 group-hover:text-primary transition-colors">Branding Basics</h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed">Professional logo design, color palettes, and
+              brand identity elements that make your business stand out.</p>
+          </div>
+          <div data-aos="fade-up" data-aos-delay="200"
+            class="p-8 bg-surface-container-low hover:bg-surface-container-high hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/5 border border-transparent hover:border-outline-variant/20 transition-all duration-300 group rounded-lg">
+            <span
+              class="material-symbols-outlined text-primary text-4xl mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 block">web</span>
+            <h3 class="text-xl font-bold mb-4 group-hover:text-primary transition-colors">Front-End Landing Pages</h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed">Responsive, pixel-perfect landing pages built
+              with HTML and CSS that convert visitors into customers.</p>
+          </div>
+          <div data-aos="fade-up" data-aos-delay="0"
+            class="p-8 bg-surface-container-low hover:bg-surface-container-high hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/5 border border-transparent hover:border-outline-variant/20 transition-all duration-300 group rounded-lg">
+            <span
+              class="material-symbols-outlined text-primary text-4xl mb-6 group-hover:scale-110 group-hover:-rotate-6 transition-transform duration-300 block">drive_presentation</span>
+            <h3 class="text-xl font-bold mb-4 group-hover:text-primary transition-colors">Corporate Presentations</h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed">Professional PowerPoint and presentation designs
+              with compelling visuals and clear data visualization.</p>
+          </div>
+          <div data-aos="fade-up" data-aos-delay="100"
+            class="p-8 bg-surface-container-low hover:bg-surface-container-high hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/5 border border-transparent hover:border-outline-variant/20 transition-all duration-300 group rounded-lg lg:col-span-2">
+            <span
+              class="material-symbols-outlined text-primary text-4xl mb-6 group-hover:scale-110 group-hover:translate-x-2 transition-transform duration-300 block">auto_awesome</span>
+            <h3 class="text-xl font-bold mb-4 group-hover:text-primary transition-colors">Custom Graphics</h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed">Tailored graphic design solutions for any project
+              including posters, flyers, banners, and digital assets.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Portfolio Showcase -->
+    <section class="py-32 px-8" id="work">
+      <div class="max-w-7xl mx-auto">
+        <div data-aos="fade-up" class="mb-16">
+          <h2 class="font-headline text-4xl font-bold mb-4">Selected Works</h2>
+          <div class="h-1 w-24 bg-primary transition-all duration-500 hover:w-32"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <!-- Project 1 -->
+          <div data-aos="fade-up" data-aos-delay="0" class="group cursor-pointer">
+            <div class="overflow-hidden rounded-lg mb-6 bg-surface-container relative">
+              <div
+                class="absolute inset-0 bg-primary/20 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10">
+              </div>
+              <img
+                class="w-full aspect-[4/3] object-cover group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100"
+                data-alt="Brand Identity Design" src="../assets/images/project-brand-identity.jpg" />
+            </div>
+            <div class="flex justify-between items-start">
+              <div>
+                <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">Brand Identity Design</h3>
+                <div class="flex gap-2">
+                  <span
+                    class="px-3 py-1 bg-secondary-container text-on-secondary-container text-xs rounded-full group-hover:bg-primary-container group-hover:text-primary transition-colors">Branding</span>
+                  <span
+                    class="px-3 py-1 bg-secondary-container text-on-secondary-container text-xs rounded-full group-hover:bg-primary-container group-hover:text-primary transition-colors">Illustrator</span>
+                </div>
+              </div>
+              <span
+                class="material-symbols-outlined text-primary text-3xl opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">arrow_forward</span>
+            </div>
+          </div>
+          <!-- Project 2 -->
+          <div data-aos="fade-up" data-aos-delay="100" class="group cursor-pointer">
+            <div class="overflow-hidden rounded-lg mb-6 bg-surface-container relative">
+              <div
+                class="absolute inset-0 bg-primary/20 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10">
+              </div>
+              <img
+                class="w-full aspect-[4/3] object-cover group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100"
+                data-alt="Social Media Campaign" src="../assets/images/project-social-media.jpg" />
+            </div>
+            <div class="flex justify-between items-start">
+              <div>
+                <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">Social Media Campaign</h3>
+                <div class="flex gap-2">
+                  <span
+                    class="px-3 py-1 bg-secondary-container text-on-secondary-container text-xs rounded-full group-hover:bg-primary-container group-hover:text-primary transition-colors">Marketing</span>
+                  <span
+                    class="px-3 py-1 bg-secondary-container text-on-secondary-container text-xs rounded-full group-hover:bg-primary-container group-hover:text-primary transition-colors">Photoshop</span>
+                </div>
+              </div>
+              <span
+                class="material-symbols-outlined text-primary text-3xl opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">arrow_forward</span>
+            </div>
+          </div>
+          <!-- Project 3 -->
+          <div data-aos="fade-up" data-aos-delay="0" class="group cursor-pointer">
+            <div class="overflow-hidden rounded-lg mb-6 bg-surface-container relative">
+              <div
+                class="absolute inset-0 bg-primary/20 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10">
+              </div>
+              <img
+                class="w-full aspect-[4/3] object-cover group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100"
+                data-alt="Corporate Presentation" src="../assets/images/project-presentation.jpg" />
+            </div>
+            <div class="flex justify-between items-start">
+              <div>
+                <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">Corporate Presentation
+                </h3>
+                <div class="flex gap-2">
+                  <span
+                    class="px-3 py-1 bg-secondary-container text-on-secondary-container text-xs rounded-full group-hover:bg-primary-container group-hover:text-primary transition-colors">Corporate</span>
+                  <span
+                    class="px-3 py-1 bg-secondary-container text-on-secondary-container text-xs rounded-full group-hover:bg-primary-container group-hover:text-primary transition-colors">PowerPoint</span>
+                </div>
+              </div>
+              <span
+                class="material-symbols-outlined text-primary text-3xl opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">arrow_forward</span>
+            </div>
+          </div>
+          <!-- Project 4 -->
+          <div data-aos="fade-up" data-aos-delay="100" class="group cursor-pointer">
+            <div class="overflow-hidden rounded-lg mb-6 bg-surface-container relative">
+              <div
+                class="absolute inset-0 bg-primary/20 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10">
+              </div>
+              <img
+                class="w-full aspect-[4/3] object-cover group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100"
+                data-alt="Restaurant Landing Page" src="../assets/images/project-restaurant.jpg" />
+            </div>
+            <div class="flex justify-between items-start">
+              <div>
+                <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">Restaurant Landing Page
+                </h3>
+                <div class="flex gap-2">
+                  <span
+                    class="px-3 py-1 bg-secondary-container text-on-secondary-container text-xs rounded-full group-hover:bg-primary-container group-hover:text-primary transition-colors">HTML</span>
+                  <span
+                    class="px-3 py-1 bg-secondary-container text-on-secondary-container text-xs rounded-full group-hover:bg-primary-container group-hover:text-primary transition-colors">CSS</span>
+                </div>
+              </div>
+              <span
+                class="material-symbols-outlined text-primary text-3xl opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">arrow_forward</span>
+            </div>
+          </div>
+          <!-- Project 5 -->
+          <div data-aos="fade-up" data-aos-delay="0" class="group cursor-pointer">
+            <div class="overflow-hidden rounded-lg mb-6 bg-surface-container relative">
+              <div
+                class="absolute inset-0 bg-primary/20 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10">
+              </div>
+              <img
+                class="w-full aspect-[4/3] object-cover group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100"
+                data-alt="Portfolio Website" src="../assets/images/project-portfolio.jpg" />
+            </div>
+            <div class="flex justify-between items-start">
+              <div>
+                <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">Portfolio Website</h3>
+                <div class="flex gap-2">
+                  <span
+                    class="px-3 py-1 bg-secondary-container text-on-secondary-container text-xs rounded-full group-hover:bg-primary-container group-hover:text-primary transition-colors">Dark
+                    Mode</span>
+                  <span
+                    class="px-3 py-1 bg-secondary-container text-on-secondary-container text-xs rounded-full group-hover:bg-primary-container group-hover:text-primary transition-colors">Tailwind</span>
+                </div>
+              </div>
+              <span
+                class="material-symbols-outlined text-primary text-3xl opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">arrow_forward</span>
+            </div>
+          </div>
+          <!-- Project 6 -->
+          <div data-aos="fade-up" data-aos-delay="100" class="group cursor-pointer">
+            <div class="overflow-hidden rounded-lg mb-6 bg-surface-container relative">
+              <div
+                class="absolute inset-0 bg-primary/20 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10">
+              </div>
+              <img
+                class="w-full aspect-[4/3] object-cover group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100"
+                data-alt="E-commerce Product Page" src="../assets/images/project-ecommerce.jpg" />
+            </div>
+            <div class="flex justify-between items-start">
+              <div>
+                <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">E-commerce Product Page
+                </h3>
+                <div class="flex gap-2">
+                  <span
+                    class="px-3 py-1 bg-secondary-container text-on-secondary-container text-xs rounded-full group-hover:bg-primary-container group-hover:text-primary transition-colors">UI/UX</span>
+                  <span
+                    class="px-3 py-1 bg-secondary-container text-on-secondary-container text-xs rounded-full group-hover:bg-primary-container group-hover:text-primary transition-colors">JavaScript</span>
+                </div>
+              </div>
+              <span
+                class="material-symbols-outlined text-primary text-3xl opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">arrow_forward</span>
+            </div>
+          </div>
+          <!-- Project 7 -->
+          <div data-aos="fade-up" data-aos-delay="0" class="group cursor-pointer">
+            <div class="overflow-hidden rounded-lg mb-6 bg-surface-container relative">
+              <div
+                class="absolute inset-0 bg-primary/20 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10">
+              </div>
+              <img
+                class="w-full aspect-[4/3] object-cover group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100"
+                data-alt="Event Poster Design" src="../assets/images/project-poster.jpg" />
+            </div>
+            <div class="flex justify-between items-start">
+              <div>
+                <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">Event Poster Design</h3>
+                <div class="flex gap-2">
+                  <span
+                    class="px-3 py-1 bg-secondary-container text-on-secondary-container text-xs rounded-full group-hover:bg-primary-container group-hover:text-primary transition-colors">Poster</span>
+                  <span
+                    class="px-3 py-1 bg-secondary-container text-on-secondary-container text-xs rounded-full group-hover:bg-primary-container group-hover:text-primary transition-colors">Print
+                    Design</span>
+                </div>
+              </div>
+              <span
+                class="material-symbols-outlined text-primary text-3xl opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">arrow_forward</span>
+            </div>
+          </div>
+          <!-- Project 8 -->
+          <div data-aos="fade-up" data-aos-delay="100" class="group cursor-pointer">
+            <div class="overflow-hidden rounded-lg mb-6 bg-surface-container relative">
+              <div
+                class="absolute inset-0 bg-primary/20 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10">
+              </div>
+              <img
+                class="w-full aspect-[4/3] object-cover group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100"
+                data-alt="Business Dashboard" src="../assets/images/project-dashboard.jpg" />
+            </div>
+            <div class="flex justify-between items-start">
+              <div>
+                <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">Business Dashboard</h3>
+                <div class="flex gap-2">
+                  <span
+                    class="px-3 py-1 bg-secondary-container text-on-secondary-container text-xs rounded-full group-hover:bg-primary-container group-hover:text-primary transition-colors">Data
+                    Viz</span>
+                  <span
+                    class="px-3 py-1 bg-secondary-container text-on-secondary-container text-xs rounded-full group-hover:bg-primary-container group-hover:text-primary transition-colors">Chart.js</span>
+                </div>
+              </div>
+              <span
+                class="material-symbols-outlined text-primary text-3xl opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">arrow_forward</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials With Swiper -->
+    <section class="py-32 px-8 bg-surface-container-low border-y border-outline-variant/10 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 md:px-0 relative">
+        <h2 data-aos="fade-up" class="font-headline text-4xl font-bold mb-16 text-center">Client Feedback</h2>
+
+        <div data-aos="fade-up" data-aos-delay="100" class="swiper testimonialSwiper pb-14 w-full">
+          <div class="swiper-wrapper">
+
+            <!-- Testimonial 1 (Mohamed) -->
+            <div class="swiper-slide h-auto">
+              <div
+                class="bg-surface-container p-8 rounded-lg flex flex-col justify-between border border-surface-container-highest hover:border-primary/30 transition-all duration-500 group h-full cursor-grab active:cursor-grabbing hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/5">
+                <p class="font-headline text-lg italic mb-8 group-hover:text-white transition-colors">"Abdullah is a
+                  quick and easy person who can handle anything and is proficient in multiple skills, and I was happy to
+                  work with him."</p>
+                <div class="flex items-center gap-4 mt-auto">
+                  <div
+                    class="w-12 h-12 rounded-full overflow-hidden shrink-0 ring-2 ring-transparent group-hover:ring-primary transition-all duration-300">
+                    <img src="../assets/images/testimonial-mohamed.jpg" class="w-full h-full object-cover"
+                      alt="Mohamed farmawy">
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-on-surface group-hover:text-primary transition-colors">Mohamed farmawy
+                    </h4>
+                    <p class="text-on-surface-variant text-xs">Graphic Designer</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 2 (Sara) -->
+            <div class="swiper-slide h-auto">
+              <div
+                class="bg-surface-container p-8 rounded-lg flex flex-col justify-between border border-surface-container-highest hover:border-primary/30 transition-all duration-500 group h-full cursor-grab active:cursor-grabbing hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/5">
+                <p class="font-headline text-lg italic mb-8 group-hover:text-white transition-colors">"The brand
+                  identity package was exactly what we needed. Abdallah understood our vision and brought it to life
+                  beautifully."</p>
+                <div class="flex items-center gap-4 mt-auto">
+                  <div
+                    class="w-12 h-12 rounded-full overflow-hidden shrink-0 ring-2 ring-transparent group-hover:ring-primary transition-all duration-300">
+                    <img src="../assets/images/testimonial-sara.jpg" class="w-full h-full object-cover"
+                      alt="Sara Mohamed">
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-on-surface group-hover:text-primary transition-colors">Sara Mohamed</h4>
+                    <p class="text-on-surface-variant text-xs">Startup Founder</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 3 (Omar) -->
+            <div class="swiper-slide h-auto">
+              <div
+                class="bg-surface-container p-8 rounded-lg flex flex-col justify-between border border-surface-container-highest hover:border-primary/30 transition-all duration-500 group h-full cursor-grab active:cursor-grabbing hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/5">
+                <p class="font-headline text-lg italic mb-8 group-hover:text-white transition-colors">"Our new website
+                  looks amazing and works perfectly on all devices. Great attention to detail and quick turnaround
+                  time."</p>
+                <div class="flex items-center gap-4 mt-auto">
+                  <div
+                    class="w-12 h-12 rounded-full overflow-hidden shrink-0 ring-2 ring-transparent group-hover:ring-primary transition-all duration-300">
+                    <img src="../assets/images/testimonial-omar.jpg" class="w-full h-full object-cover"
+                      alt="Omar Khalil">
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-on-surface group-hover:text-primary transition-colors">Omar Khalil</h4>
+                    <p class="text-on-surface-variant text-xs">Restaurant Owner</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 4 (Mohamed Duplicate for Desktop Slide) -->
+            <div class="swiper-slide h-auto">
+              <div
+                class="bg-surface-container p-8 rounded-lg flex flex-col justify-between border border-surface-container-highest hover:border-primary/30 transition-all duration-500 group h-full cursor-grab active:cursor-grabbing hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/5">
+                <p class="font-headline text-lg italic mb-8 group-hover:text-white transition-colors">"Abdullah is a
+                  quick and easy person who can handle anything and is proficient in multiple skills, and I was happy to
+                  work with him."</p>
+                <div class="flex items-center gap-4 mt-auto">
+                  <div
+                    class="w-12 h-12 rounded-full overflow-hidden shrink-0 ring-2 ring-transparent group-hover:ring-primary transition-all duration-300">
+                    <img src="../assets/images/testimonial-mohamed.jpg" class="w-full h-full object-cover"
+                      alt="Mohamed farmawy">
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-on-surface group-hover:text-primary transition-colors">Mohamed farmawy
+                    </h4>
+                    <p class="text-on-surface-variant text-xs">Graphic Designer</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 5 (Sara Duplicate for Desktop Slide) -->
+            <div class="swiper-slide h-auto">
+              <div
+                class="bg-surface-container p-8 rounded-lg flex flex-col justify-between border border-surface-container-highest hover:border-primary/30 transition-all duration-500 group h-full cursor-grab active:cursor-grabbing hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/5">
+                <p class="font-headline text-lg italic mb-8 group-hover:text-white transition-colors">"The brand
+                  identity package was exactly what we needed. Abdallah understood our vision and brought it to life
+                  beautifully."</p>
+                <div class="flex items-center gap-4 mt-auto">
+                  <div
+                    class="w-12 h-12 rounded-full overflow-hidden shrink-0 ring-2 ring-transparent group-hover:ring-primary transition-all duration-300">
+                    <img src="../assets/images/testimonial-sara.jpg" class="w-full h-full object-cover"
+                      alt="Sara Mohamed">
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-on-surface group-hover:text-primary transition-colors">Sara Mohamed</h4>
+                    <p class="text-on-surface-variant text-xs">Startup Founder</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 6 (Omar Duplicate for Desktop Slide) -->
+            <div class="swiper-slide h-auto">
+              <div
+                class="bg-surface-container p-8 rounded-lg flex flex-col justify-between border border-surface-container-highest hover:border-primary/30 transition-all duration-500 group h-full cursor-grab active:cursor-grabbing hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/5">
+                <p class="font-headline text-lg italic mb-8 group-hover:text-white transition-colors">"Our new website
+                  looks amazing and works perfectly on all devices. Great attention to detail and quick turnaround
+                  time."</p>
+                <div class="flex items-center gap-4 mt-auto">
+                  <div
+                    class="w-12 h-12 rounded-full overflow-hidden shrink-0 ring-2 ring-transparent group-hover:ring-primary transition-all duration-300">
+                    <img src="../assets/images/testimonial-omar.jpg" class="w-full h-full object-cover"
+                      alt="Omar Khalil">
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-on-surface group-hover:text-primary transition-colors">Omar Khalil</h4>
+                    <p class="text-on-surface-variant text-xs">Restaurant Owner</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Swiper Pagination -->
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-32 px-8 overflow-hidden" id="contact">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div data-aos="fade-right">
+          <h2 class="font-headline text-5xl font-bold mb-6">Let's build<br />the future.</h2>
+          <p class="text-on-surface-variant text-lg mb-10 max-w-md">Currently accepting new projects and collaboration
+            opportunities. Reach out and let's discuss your vision.</p>
+          <div class="space-y-6">
+            <a class="flex items-center gap-4 text-on-surface hover:text-primary transition-all duration-300 group hover:translate-x-2"
+              href="mailto:abdallaahsam66@gmail.com">
+              <span
+                class="w-12 h-12 flex items-center justify-center rounded bg-surface-container-highest group-hover:bg-primary-container group-hover:text-primary transition-all shadow-lg">
+                <span class="material-symbols-outlined group-hover:scale-110 transition-transform">mail</span>
+              </span>
+              <span class="font-bold">abdallaahsam66@gmail.com</span>
+            </a>
+            <a class="flex items-center gap-4 text-on-surface hover:text-primary transition-all duration-300 group hover:translate-x-2"
+              href="https://wa.me/+201112302757">
+              <span
+                class="w-12 h-12 flex items-center justify-center rounded bg-surface-container-highest group-hover:bg-primary-container group-hover:text-primary transition-all shadow-lg">
+                <span class="material-symbols-outlined group-hover:scale-110 transition-transform">chat</span>
+              </span>
+              <span class="font-bold">+20 111 230 2757</span>
+            </a>
+            <a class="flex items-center gap-4 text-on-surface hover:text-primary transition-all duration-300 group hover:translate-x-2"
+              href="https://linkedin.com/in/abdallaahsam">
+              <span
+                class="w-12 h-12 flex items-center justify-center rounded bg-surface-container-highest group-hover:bg-primary-container group-hover:text-primary transition-all shadow-lg">
+                <span class="material-symbols-outlined group-hover:scale-110 transition-transform">link</span>
+              </span>
+              <span class="font-bold">linkedin.com/in/abdallaahsam</span>
+            </a>
+          </div>
+        </div>
+        <div data-aos="fade-left"
+          class="bg-surface-container p-10 rounded-lg shadow-2xl shadow-black/50 border border-outline-variant/10 hover:border-primary/20 transition-colors duration-500">
+          <form class="space-y-6">
+            <div class="space-y-2 group">
+              <label
+                class="text-xs font-bold uppercase tracking-widest text-on-surface-variant group-focus-within:text-primary transition-colors">Full
+                Name</label>
+              <input
+                class="w-full bg-surface-container-highest border-0 border-b border-outline-variant focus:border-primary focus:ring-0 text-on-surface transition-all px-4 py-3"
+                placeholder="John Doe" type="text" />
+            </div>
+            <div class="space-y-2 group">
+              <label
+                class="text-xs font-bold uppercase tracking-widest text-on-surface-variant group-focus-within:text-primary transition-colors">Email
+                Address</label>
+              <input
+                class="w-full bg-surface-container-highest border-0 border-b border-outline-variant focus:border-primary focus:ring-0 text-on-surface transition-all px-4 py-3"
+                placeholder="john@example.com" type="email" />
+            </div>
+            <div class="space-y-2 group">
+              <label
+                class="text-xs font-bold uppercase tracking-widest text-on-surface-variant group-focus-within:text-primary transition-colors">Your
+                Message</label>
+              <textarea
+                class="w-full bg-surface-container-highest border-0 border-b border-outline-variant focus:border-primary focus:ring-0 text-on-surface transition-all px-4 py-3 resize-none"
+                placeholder="How can I help you?" rows="4"></textarea>
+            </div>
+            <button
+              class="w-full py-4 bg-primary text-on-primary font-bold rounded hover:bg-primary-dim hover:shadow-lg hover:shadow-primary/30 transition-all active:scale-95 duration-300 group"
+              type="submit">
+              <span class="flex items-center justify-center gap-2">Send Message <span
+                  class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">send</span></span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer
+    class="bg-neutral-950 border-t border-neutral-800/30 py-12 px-8 text-center sm:text-left transition-colors duration-500 hover:border-primary/30">
+    <div
+      class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 font-['Inter'] text-sm tracking-wide">
+      <div class="text-lg font-black text-neutral-100 hover:text-primary transition-colors cursor-pointer"
+        onclick="window.scrollTo(0,0)">ABDALLAH.DEV</div>
+      <div class="text-neutral-500">© 2024 Abdallah Ahmed Samir. Built with precision.</div>
+      <div class="flex gap-6">
+        <a class="text-neutral-500 hover:text-cyan-400 hover:-translate-y-1 transition-all opacity-80 hover:opacity-100"
+          href="https://linkedin.com/in/abdallaahsam">LinkedIn</a>
+        <a class="text-neutral-500 hover:text-cyan-400 hover:-translate-y-1 transition-all opacity-80 hover:opacity-100"
+          href="https://wa.me/+201112302757">WhatsApp</a>
+        <a class="text-neutral-500 hover:text-cyan-400 hover:-translate-y-1 transition-all opacity-80 hover:opacity-100"
+          href="contact.html">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- AOS JS Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Swiper JS Script -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script>
+    // AOS Initialization
+    AOS.init({
+      duration: 800,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 50
+    });
+
+    // Swiper Initialization
+    var swiper = new Swiper(".testimonialSwiper", {
+      slidesPerView: 1,
+      spaceBetween: 32,
+      loop: true,
+      observer: true,
+      observeParents: true,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        },
+      },
+      grabCursor: true
+    });
+  </script>
+</body>
+
+</html>
